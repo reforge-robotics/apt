@@ -70,6 +70,24 @@ Description: Reforge Shaper C++ SDK
  Native headers, shared libraries, CMake package files, and a
  hardware-free demo for the Reforge Shaper C++ SDK.
 
+Package: reforge-core-shaper
+Architecture: amd64
+Version: 2.0.9-5
+Priority: optional
+Section: libs
+Maintainer: Reforge Robotics <support@reforgerobotics.com>
+Depends: libc6 (>= 2.38), libgcc-s1 (>= 3.0), libgomp1 (>= 4.9), libstdc++6 (>= 12), libeigen3-dev, zlib1g
+Recommends: cmake, g++
+Filename: pool/main/r/reforge-core-shaper/reforge-core-shaper_2.0.9-5_amd64.deb
+Size: 8050752
+MD5sum: 5fc445a341f2e8a6f08f0fc9836774e8
+SHA1: 39195c5ce4597ff53ce8dd1e854940f3936da143
+SHA256: a33cc14006836dddeec947872a18b5747c236148cbc36ac8668f8cb5b14f5fe7
+SHA512: e5c52687a6c650e9b70b43890d4b018a7998c60acf303269a4fe9b8902dafcd8bf0bd28416b16f01bf62d877026acf33793a9b1e144ea1c8dd8d281023e8dec6
+Description: Reforge Shaper C++ SDK
+ Native headers, shared libraries, CMake package files, and a
+ hardware-free demo for the Reforge Shaper C++ SDK.
+
 Package: reforge-core
 Architecture: amd64
 Version: 2.0.9-1
@@ -115,6 +133,23 @@ MD5sum: ef445160ae0eb5c3b4ee7f77f5b1d0d0
 SHA1: 7ef85f6c338faac213800e38b9d3953e3745dd27
 SHA256: 4b0de7f5e93eb815b9d7ebad60517fe4ef3e859320fc07609debd5e14c659de6
 SHA512: c4f8ed0cff0da9cf29bdeabeb8cba7b97724b0a3b75eeeb4e55e71f1288fab03f23c1efa3fd9007053cf80c254151c1ba2ad4272d4c139ad31da2594535b2a13
+Description: Reforge Robotics Core SDK
+ Meta package that installs the matching Reforge Core SDK
+ packages for one release version.
+
+Package: reforge-core
+Architecture: amd64
+Version: 2.0.9-5
+Priority: optional
+Section: metapackages
+Maintainer: Reforge Robotics <support@reforgerobotics.com>
+Depends: reforge-core-shaper (= 2.0.9-5)
+Filename: pool/main/r/reforge-core/reforge-core_2.0.9-5_amd64.deb
+Size: 1336
+MD5sum: b8ba161457156cc6657d9eaa6b5a3364
+SHA1: 6edb2e61aa3a10fb3b9fc707157c5e1ff195f30b
+SHA256: ec050af25fe3b26eed40abcd4c7b79ab3fd6ef91270e146115cf8fb5d6ea1189
+SHA512: 738e46b5aaf8a6f3119b52478c8fa401dda5a71ad622fa1dd9d1f5344cdc0ac5c7aa592aad0ada8adb79b4d4e1bd6a0951f589f7490d00d7610710b47c246867
 Description: Reforge Robotics Core SDK
  Meta package that installs the matching Reforge Core SDK
  packages for one release version.

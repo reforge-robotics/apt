@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 set -eu
 
-BASE_URL="${REFORGE_APT_BASE_URL:-https://reforge-robotics.github.io/apt}"
+BASE_URL="${REFORGE_APT_BASE_URL:-https://reforge-robotics.github.io/reforge-core-cpp}"
 SUITE="${REFORGE_APT_SUITE:-stable}"
 COMPONENT="${REFORGE_APT_COMPONENT:-main}"
 KEYRING="/usr/share/keyrings/reforge-archive-keyring.gpg"

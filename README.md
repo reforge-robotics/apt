@@ -24,7 +24,7 @@ sudo apt install -y ca-certificates curl gnupg
 Add the signed Reforge APT repository:
 
 ```bash
-curl -fsSL https://reforge-robotics.github.io/apt/setup.sh | sudo bash
+curl -fsSL https://reforge-robotics.github.io/reforge-core-cpp/setup.sh | sudo bash
 ```
 
 Install only the Shaper C++ SDK package:

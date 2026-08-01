@@ -1,20 +1,20 @@
 Architectures: amd64
 Codename: stable
 Components: main
-Date: Sat, 01 Aug 2026 05:47:59 +0000
+Date: Sat, 01 Aug 2026 06:48:28 +0000
 Description: Reforge Robotics package repository
 Label: Reforge Robotics
 Origin: Reforge Robotics
 Suite: stable
 MD5Sum:
- 240db84ee97ed0b880870ed5a9ebf2fd             6835 main/binary-amd64/Packages
- 6e2330b4a34ebcab6b322a8b95d192bc             2164 main/binary-amd64/Packages.gz
+ b80a66994f0b0006dd7fba94a0a99c36             8374 main/binary-amd64/Packages
+ bffc47087d41e634897b6912b967a54a             2535 main/binary-amd64/Packages.gz
 SHA1:
- 557db1f75b3f8fd251a15dbbd50a0ac26061edd0             6835 main/binary-amd64/Packages
- f04284f591de47cfa7bf4376292d94be017632c1             2164 main/binary-amd64/Packages.gz
+ a41ce81ded5d4f0ae76243554a57345018840a8f             8374 main/binary-amd64/Packages
+ 4cc120ba0c55f9a9bf5f109398b8a51a72743c41             2535 main/binary-amd64/Packages.gz
 SHA256:
- e7c470887da31e94cf0f286aeb1fbfe25c51ae5c98be0b17a8845965f2903b00             6835 main/binary-amd64/Packages
- ba1c8ab69a5633ac2f46af1bec3f4a31c4a677f69e9a902061fa13ec7d76c541             2164 main/binary-amd64/Packages.gz
+ 97e26e7bd2905fe60b6d7bffbe6a42fa49aadff51e524401d43538dac38fd9ca             8374 main/binary-amd64/Packages
+ 9f110fcdf202ee009dfa917f5eec5d0ebbede164d076d9d3855aab58c5bc5f79             2535 main/binary-amd64/Packages.gz
 SHA512:
- 0219820f1e396dc16c62f7eb74aa9759072e4565ca9354c65bf0f54ac55b49bb436f3c9aa2c2311ebe3975059325dd42e7f4bcf562c6a977785f67360029a6c7             6835 main/binary-amd64/Packages
- 6f5d2ccd70ae58857c8f6065ab6f4434d691878148ad9da39eb7d239fca854942432aaaacea7a06031dce8944858c20820614d0c8cc461ca5b5254eac6783cf2             2164 main/binary-amd64/Packages.gz
+ ab502b4e39cf4b4209cebe46354171d226690cdb1a6bc966fd1bcfe26b294719ed4e71decff93b144883ebde3e2ac0e6cf5e462ea9ea026c05ce3076e33677d4             8374 main/binary-amd64/Packages
+ 3b1e4c259272d8cc038f0f9ae473fb1d6a23a9dc0261c45c42e9f78cdde6efcca273d95bf7dbf88eeb0196e5eb9ad30ac16a7fd7649f2fd16589beb294388722             2535 main/binary-amd64/Packages.gz

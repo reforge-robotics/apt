@@ -34,6 +34,24 @@ Description: Reforge Shaper C++ SDK
  Native headers, shared libraries, CMake package files, and a
  hardware-free demo for the Reforge Shaper C++ SDK.
 
+Package: reforge-core-shaper
+Architecture: amd64
+Version: 2.0.9-3
+Priority: optional
+Section: libs
+Maintainer: Reforge Robotics <support@reforgerobotics.com>
+Depends: libc6 (>= 2.38), libgcc-s1 (>= 3.0), libgomp1 (>= 4.9), libstdc++6 (>= 12), libeigen3-dev, zlib1g
+Recommends: cmake, g++
+Filename: pool/main/r/reforge-core-shaper/reforge-core-shaper_2.0.9-3_amd64.deb
+Size: 8050090
+MD5sum: ee8ce9dcd8634994b3cbab8c4fdcf568
+SHA1: 29e847c2d76054ecdcfd2f9a7a698cf4f24518f6
+SHA256: 2d52bed9fbeb3e2c38d91e4a5ffd24fa3b03e60581612e33754aa52853d9f998
+SHA512: efabc5afdb12713c0861132f95e956fed6965d2bcd8e0ba2533ea05347585ecb9463b55215e2a1af66e1f44807f1ddcb647c9533c795b711067fac9d54dde142
+Description: Reforge Shaper C++ SDK
+ Native headers, shared libraries, CMake package files, and a
+ hardware-free demo for the Reforge Shaper C++ SDK.
+
 Package: reforge-core
 Architecture: amd64
 Version: 2.0.9-1

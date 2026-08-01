@@ -4,7 +4,7 @@ Hash: SHA512
 Architectures: amd64
 Codename: stable
 Components: main
-Date: Fri, 31 Jul 2026 05:10:27 +0000
+Date: Sat, 01 Aug 2026 02:12:46 +0000
 Description: Reforge Robotics package repository
 Label: Reforge Robotics
 Origin: Reforge Robotics
@@ -23,18 +23,18 @@ SHA512:
  3260748d41919e2706d2a3e40cf0e30c6dc60a04a6fe0a588522b4d209e8eea9db9547b2db92f98955d9fe1c122f8bf839e90cda43f66e057779b06d856b0a54             1142 main/binary-amd64/Packages.gz
 -----BEGIN PGP SIGNATURE-----
 
-iQJVBAEBCgA/FiEEDqE1bakCjUoKWhUhIhPipOcsyyYFAmpsLkMhHHJlbGVhc2Ut
-dGVzdEByZWZvcmdlcm9ib3RpY3MuY29tAAoJECIT4qTnLMsmJfQP/RTtlSYeArk5
-TrY+K7WpBqtZiq1d3wGQz/e+EClT5fMQRCvZ++ykRNfqKaELwKScAOX70NlE+YAs
-wmScy3OFSv7CsSK7MrxBfJjYH3bHd+2qEbDrz/kmIUVE6k5B3JIeguvlPDKzbmkI
-fsVQaMjoZgT29xakcbg1fvD/BBjYeNDhdOnu1ZSN1POH7q6xa2fC6IK29thvkb9p
-YARxd9dYExuYv+WZlQMlUY3Q3FK21HoZyS5tQsNXg6yBr7Yl2s8iVklVMRW5dlfO
-VjD590qbONwuMkQO9dGGGTl1EVn1izJV1KVrVFsdxNzJUHK7doRxckkvb2mUqQD3
-gebZMiRRin+ahvTiHcHGd/xqDRUOa5N8iUrC+Es/A3ldk5v9wRsseN8n+QNMAtCw
-X4xxqq4KMS/H72De1ihFfn9LOhQxoKWRWsxS7eEThpOWJdCifvY3nJuxJJy3hUQp
-imOt+uA1SSToWJ0+rL8gnkhQ7QMj/GUth1wWU31uzCWUspZHwXC7BPxPu79bsBiF
-mwWm+/+6ABCi63IsMv/NqkcCz0HMlAlERNdhSU45p3DDHwePEtHGrrDHMGcX8+Hb
-sPSooH1Gi1ggrtlnRr2RVnNBMadn6WNob2+ZYjUP+tcqteuTghYs9qxDnWWOVe5h
-E7llVqPdCNlpRak+1Bd0yfy3ipk3zrZL
-=xKaN
+iQJQBAEBCgA6FiEEiajimtAaGHXVJexejnL7LPS07wwFAmptVh4cHHJlbGVhc2VA
+cmVmb3JnZXJvYm90aWNzLmNvbQAKCRCOcvss9LTvDJk1D/94ZqGbZ4ghA5Qz3ID9
+EeeTahPtZPbAz4Z0HWbAWCwZUApwIDfAxnvzNmZVKgy7yzq2g/IwFCw3ySZJtMDp
+p0J/kGM1/mYdgJegdfk9m/zZIhNaXuhGWDemguWpolJP8lhkidnHY3uUwYMcuAKJ
+0ik5G3jxr3ONIHG07QBjY1tf8nvhd9ML/rnaQ2pnicAs5ko5P6oVIadksIDGAc7w
+TiozZnzvjw2Rdqy2er0VFcxDjRXdsX3OKBWhZZpGGrkB0aOyFi1G5s1fkN84p0VY
+3tsGsoW1dkaRxP6wgxZjOb4qEPNIODARk27fYSAZkCveDiD/1iuMIs9WiM2aM0nE
+zXTHTZxgWPoe9K0A0wIB0SKaFf8syy6RWsoX/iZrORE/WFfG8T5nGHM/nikm+m7S
+UtxzvPgBfXYET5ELehf7bFi9a+l/xtE/syZFolFJUhDeWxnCOEccMMBJ2vrH7ubG
+VV9vF1iGXuHSjfbi/TkpKvOdoj8CiXKXO3PvlMMzCSDgn6/MVQMaUpZeBRaOjaHt
+G0YeRxGWTB5zNq70sRja4G7bmfcMXMimUFIe/jessa62kLJzP13SFCcBxmsRqTr3
+4zOIrJJ9uIbFeCRjUy/Yd6QVKidhwDX9WokhO/rGKVhBEoB3G2xdzMdx+I2LMwll
+QjBTPYgdpQzJ0VvRGTczXtzPUA==
+=2jZ6
 -----END PGP SIGNATURE-----

@@ -7,8 +7,9 @@ COMPONENT="${REFORGE_APT_COMPONENT:-main}"
 KEYRING="/usr/share/keyrings/reforge-archive-keyring.gpg"
 SOURCE_LIST="/etc/apt/sources.list.d/reforge.list"
 SUPPORTED_OS_ID="ubuntu"
-SUPPORTED_VERSION_ID="24.04"
-SUPPORTED_CODENAME="noble"
+SUPPORTED_VERSION_IDS="20.04 22.04 24.04"
+SUPPORTED_CODENAMES="focal jammy noble"
+SUPPORTED_DESCRIPTION="Ubuntu 20.04 (focal), 22.04 (jammy), or 24.04 (noble)"
 
 if [ "$(id -u)" -ne 0 ]; then
     echo "setup.sh must run as root." >&2
@@ -16,7 +17,7 @@ if [ "$(id -u)" -ne 0 ]; then
 fi
 
 if [ ! -r /etc/os-release ]; then
-    echo "setup.sh requires Ubuntu 24.04 (noble); /etc/os-release is missing." >&2
+    echo "setup.sh requires ${SUPPORTED_DESCRIPTION}; /etc/os-release is missing." >&2
     exit 1
 fi
 
@@ -26,14 +27,35 @@ OS_VERSION_ID="${VERSION_ID:-}"
 OS_CODENAME="${VERSION_CODENAME:-}"
 OS_PRETTY_NAME="${PRETTY_NAME:-unknown Linux distribution}"
 
-if [ "${OS_ID}" != "${SUPPORTED_OS_ID}" ] || [ "${OS_VERSION_ID}" != "${SUPPORTED_VERSION_ID}" ]; then
-    echo "Reforge APT packages currently support only Ubuntu 24.04 (noble). Detected: ${OS_PRETTY_NAME}." >&2
+if [ "${OS_ID}" != "${SUPPORTED_OS_ID}" ]; then
+    echo "Reforge APT setup currently supports only ${SUPPORTED_DESCRIPTION}. Detected: ${OS_PRETTY_NAME}." >&2
     exit 1
 fi
 
-if [ -n "${OS_CODENAME}" ] && [ "${OS_CODENAME}" != "${SUPPORTED_CODENAME}" ]; then
-    echo "Reforge APT packages currently support only Ubuntu 24.04 (noble). Detected codename: ${OS_CODENAME}." >&2
+VERSION_SUPPORTED=0
+for SUPPORTED_VERSION_ID in ${SUPPORTED_VERSION_IDS}; do
+    if [ "${OS_VERSION_ID}" = "${SUPPORTED_VERSION_ID}" ]; then
+        VERSION_SUPPORTED=1
+        break
+    fi
+done
+if [ "${VERSION_SUPPORTED}" != "1" ]; then
+    echo "Reforge APT setup currently supports only ${SUPPORTED_DESCRIPTION}. Detected: ${OS_PRETTY_NAME}." >&2
     exit 1
+fi
+
+if [ -n "${OS_CODENAME}" ]; then
+    CODENAME_SUPPORTED=0
+    for SUPPORTED_CODENAME in ${SUPPORTED_CODENAMES}; do
+        if [ "${OS_CODENAME}" = "${SUPPORTED_CODENAME}" ]; then
+            CODENAME_SUPPORTED=1
+            break
+        fi
+    done
+    if [ "${CODENAME_SUPPORTED}" != "1" ]; then
+        echo "Reforge APT setup currently supports only ${SUPPORTED_DESCRIPTION}. Detected codename: ${OS_CODENAME}." >&2
+        exit 1
+    fi
 fi
 
 ARCHITECTURE="$(dpkg --print-architecture)"
@@ -57,6 +79,10 @@ printf 'deb [arch=%s signed-by=%s] %s %s %s\n' \
 echo "Configured Reforge APT repository: ${BASE_URL} ${SUITE} ${COMPONENT}"
 echo "Next commands:"
 echo "  sudo apt update"
-echo "  sudo apt install reforge-core-shaper"
 echo "  sudo apt install reforge-core-joint-tracker"
-echo "  sudo apt install reforge-core"
+if [ "${OS_VERSION_ID}" = "24.04" ] || [ "${OS_CODENAME}" = "noble" ]; then
+    echo "  sudo apt install reforge-core-shaper"
+    echo "  sudo apt install reforge-core"
+else
+    echo "  # reforge-core-shaper and reforge-core currently require Ubuntu 24.04"
+fi

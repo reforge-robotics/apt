@@ -3,14 +3,17 @@
 This repository publishes Reforge Robotics Debian packages for
 supported Ubuntu machines.
 
-## Supported Platform
+## Supported Platforms
 
 ```text
-Ubuntu 24.04 noble, amd64
+Repository setup: Ubuntu 20.04 focal, 22.04 jammy, 24.04 noble; amd64
+Joint Tracker C++ SDK: Ubuntu 20.04 or newer; amd64
+Shaper C++ SDK and reforge-core bundle: Ubuntu 24.04 noble; amd64
 ```
 
-The setup script exits with an error on unsupported operating
-systems before it writes an APT source.
+The setup script exits with an error on unsupported operating systems
+before it writes an APT source. Individual package dependencies then
+enforce component-specific platform support.
 
 ## Install Reforge Core C++ SDK Packages
 
@@ -104,7 +107,7 @@ target_link_libraries(reforge_shaper_app PRIVATE ReforgeShaper::runtime)
 For Joint Tracker:
 
 ```cmake
-cmake_minimum_required(VERSION 3.25)
+cmake_minimum_required(VERSION 3.16)
 project(reforge_joint_tracker_app LANGUAGES CXX)
 
 find_package(ReforgeJointTracker CONFIG REQUIRED)
@@ -133,22 +136,27 @@ Upgrade the Shaper C++ SDK:
 
 ```bash
 sudo apt update
-sudo apt upgrade -y reforge-core-shaper
+sudo apt install -y reforge-core-shaper
 ```
 
 Upgrade the Joint Tracker C++ SDK:
 
 ```bash
 sudo apt update
-sudo apt upgrade -y reforge-core-joint-tracker
+sudo apt install -y reforge-core-joint-tracker
 ```
 
 Upgrade the default Reforge Core package set:
 
 ```bash
 sudo apt update
-sudo apt upgrade -y reforge-core
+sudo apt install -y reforge-core
 ```
+
+`apt install` is intentional for named Reforge packages: it upgrades
+an installed package to the repository candidate and resolves exact
+component dependencies for meta packages. Do not use
+`apt upgrade <package>` for the Reforge meta package.
 
 Run the installed demo again after upgrading to confirm the SDK
 still builds and links correctly.

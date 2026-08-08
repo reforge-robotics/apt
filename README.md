@@ -12,7 +12,7 @@ Ubuntu 24.04 noble, amd64
 The setup script exits with an error on unsupported operating
 systems before it writes an APT source.
 
-## Install The Shaper C++ SDK
+## Install Reforge Core C++ SDK Packages
 
 Install the basic tools needed to add the repository:
 
@@ -34,6 +34,13 @@ sudo apt update
 sudo apt install -y reforge-core-shaper
 ```
 
+Install only the Joint Tracker C++ SDK package:
+
+```bash
+sudo apt update
+sudo apt install -y reforge-core-joint-tracker
+```
+
 Or install the default Reforge Core package set:
 
 ```bash
@@ -43,13 +50,14 @@ sudo apt install -y reforge-core
 
 ## Validate The Installed SDK
 
-Check the installed package version:
+Check installed package versions:
 
 ```bash
 dpkg-query -W -f='${Package} ${Version} ${Architecture}\n' reforge-core-shaper
+dpkg-query -W -f='${Package} ${Version} ${Architecture}\n' reforge-core-joint-tracker
 ```
 
-Build and run the demo shipped with the SDK:
+Build and run the Shaper demo shipped with the SDK:
 
 ```bash
 sudo apt install -y cmake build-essential
@@ -62,6 +70,21 @@ Expected demo output:
 
 ```text
 Reforge Shaper C++ demo complete.
+```
+
+Build and run the Joint Tracker demo shipped with the SDK:
+
+```bash
+sudo apt install -y cmake build-essential
+cmake -S /usr/share/reforge-core-joint-tracker/examples -B /tmp/reforge-joint-tracker-demo
+cmake --build /tmp/reforge-joint-tracker-demo --parallel
+/tmp/reforge-joint-tracker-demo/reforge_joint_tracker_driver_loop_demo
+```
+
+Expected demo output:
+
+```text
+Reforge Joint Tracker driver loop complete.
 ```
 
 ## Use The SDK In Your CMake Project
@@ -78,13 +101,30 @@ add_executable(reforge_shaper_app main.cpp)
 target_link_libraries(reforge_shaper_app PRIVATE ReforgeShaper::runtime)
 ```
 
+For Joint Tracker:
+
+```cmake
+cmake_minimum_required(VERSION 3.25)
+project(reforge_joint_tracker_app LANGUAGES CXX)
+
+find_package(ReforgeJointTracker CONFIG REQUIRED)
+
+add_executable(reforge_joint_tracker_app main.cpp)
+target_link_libraries(
+    reforge_joint_tracker_app
+    PRIVATE ReforgeJointTracker::joint_tracker
+)
+```
+
 The package installs SDK files under:
 
 ```text
 /usr/include/reforge_core
 /usr/lib/x86_64-linux-gnu
 /usr/lib/x86_64-linux-gnu/cmake/ReforgeShaper
+/usr/lib/x86_64-linux-gnu/cmake/ReforgeJointTracker
 /usr/share/reforge-core-shaper/examples
+/usr/share/reforge-core-joint-tracker/examples
 ```
 
 ## Upgrade
@@ -94,6 +134,13 @@ Upgrade the Shaper C++ SDK:
 ```bash
 sudo apt update
 sudo apt upgrade -y reforge-core-shaper
+```
+
+Upgrade the Joint Tracker C++ SDK:
+
+```bash
+sudo apt update
+sudo apt upgrade -y reforge-core-joint-tracker
 ```
 
 Upgrade the default Reforge Core package set:
